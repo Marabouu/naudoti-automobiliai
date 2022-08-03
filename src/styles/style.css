@@ -8,6 +8,7 @@
   margin-top: 80px;
   display: flex;
   justify-content: center;
+  align-items: center;
   padding-top: 10px;
   border: 2px solid black;
   width: 300px;
