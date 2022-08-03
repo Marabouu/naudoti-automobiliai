@@ -3,6 +3,8 @@ var pyramid = document.getElementById("pyramid");
 var reversePyramid = document.getElementById("reverse-pyramid");
 var clear = document.getElementById("clear");
 
+var pyramidd = document.getElementById("pyramidd");
+
 function printOutput(content) {
   document.querySelector("#result").textContent = content;
   const result = document.querySelector("#result");
@@ -27,19 +29,25 @@ triangle.addEventListener("click", function () {
 
 //Pyramides isvedimas
 pyramid.addEventListener("click", function () {
-  function generatePyramid(max = 5) {
+  function generatePyramid() {
     result.innerHTML = "";
-    const length = 2 * max - 1;
-    for (let i = 1; i <= max; i++) {
-      let s = "*".repeat(i).split("").join(" ");
-      s = s
-        .padStart(s.length + Math.floor((length - s.length) / 2))
-        .padEnd(length);
-      document.querySelector("#result").innerHTML +=
-        s.replace(/\s/g, " &nbsp") + "<br/>";
+    let n = 5;
+    let output = "";
+    for (let i = 1; i <= n; i++) {
+      for (let j = 1; j <= n - i; j++) {
+        output += "&nbsp";
+      }
+      for (let k = 0; k < 2 * i - 1; k++) {
+        output += "*";
+      }
+
+      output += "<br />";
     }
+    document.querySelector("#result").innerHTML += output;
+    console.log(output);
   }
-  generatePyramid(7);
+
+  generatePyramid();
 });
 
 //Atvirkstines pyramides isvedimas
