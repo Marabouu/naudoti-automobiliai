@@ -92,7 +92,7 @@ rhomb.addEventListener("click", function () {
     result.innerHTML = "";
     for (i = 1; i <= 5; i++) {
       output = "&nbsp";
-      for (j = i; j < 10; j++) {
+      for (j = i; j < 5; j++) {
         output += "&nbsp";
       }
       for (k = 0; k < i * 2 - 1; k++) {
@@ -103,7 +103,7 @@ rhomb.addEventListener("click", function () {
     var output = " ";
     for (i = 5 - 1; i >= 1; i--) {
       output = "&nbsp";
-      for (j = i; j < 10; j++) {
+      for (j = i; j < 5; j++) {
         output += "&nbsp";
       }
       for (k = 0; k < i * 2 - 1; k++) {
