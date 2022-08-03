@@ -2,8 +2,7 @@ var triangle = document.getElementById("triangle");
 var pyramid = document.getElementById("pyramid");
 var reversePyramid = document.getElementById("reverse-pyramid");
 var clear = document.getElementById("clear");
-
-var pyramidd = document.getElementById("pyramidd");
+var rhomb = document.getElementById("rhomb");
 
 function printOutput(content) {
   document.querySelector("#result").textContent = content;
@@ -44,7 +43,6 @@ pyramid.addEventListener("click", function () {
       output += "<br />";
     }
     document.querySelector("#result").innerHTML += output;
-    console.log(output);
   }
 
   generatePyramid();
@@ -86,4 +84,34 @@ clear.addEventListener("click", function () {
     //document.querySelector("#result").innerHTML += "";
   }
   Clear();
+});
+
+//Rombo isvedimas
+rhomb.addEventListener("click", function () {
+  function generateRhomb() {
+    result.innerHTML = "";
+    for (i = 1; i <= 5; i++) {
+      output = "&nbsp";
+      for (j = i; j < 10; j++) {
+        output += "&nbsp";
+      }
+      for (k = 0; k < i * 2 - 1; k++) {
+        output += "*";
+      }
+      document.querySelector("#result").innerHTML += output + "<br />";
+    }
+    var output = "";
+    for (i = 5 - 1; i >= 1; i--) {
+      output = "&nbsp";
+      for (j = i; j < 10; j++) {
+        output += "&nbsp";
+      }
+      for (k = 0; k < i * 2 - 1; k++) {
+        output += "*";
+      }
+      document.querySelector("#result").innerHTML += output + "<br />";
+    }
+  }
+
+  generateRhomb();
 });
