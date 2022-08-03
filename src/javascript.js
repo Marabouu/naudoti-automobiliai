@@ -100,7 +100,7 @@ rhomb.addEventListener("click", function () {
       }
       document.querySelector("#result").innerHTML += output + "<br />";
     }
-    var output = "";
+    var output = " ";
     for (i = 5 - 1; i >= 1; i--) {
       output = "&nbsp";
       for (j = i; j < 10; j++) {
