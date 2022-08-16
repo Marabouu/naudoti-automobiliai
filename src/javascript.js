@@ -1,117 +1,87 @@
-var triangle = document.getElementById("triangle");
-var pyramid = document.getElementById("pyramid");
-var reversePyramid = document.getElementById("reverse-pyramid");
-var clear = document.getElementById("clear");
-var rhomb = document.getElementById("rhomb");
+var input1 = document.getElementById("input1");
+var input2 = document.getElementById("input2");
+var input3 = document.getElementById("input3");
+var submit = document.getElementById("submit");
+document.getElementById("input1").value = localStorage.getItem("server");
+function addElement() {
+  // create a new div element
+  const newDiv = document.createElement("div");
 
-function printOutput(content) {
-  document.querySelector("#result").textContent = content;
-  const result = document.querySelector("#result");
+  // and give it some content
+  const newContent = document.createTextNode("Hi there and greetings!");
+
+  // add the text node to the newly created div
+  newDiv.appendChild(newContent);
+
+  // add the newly created element and its content into the DOM
+  const currentDiv = document.getElementById("div1");
+  document.body.insertBefore(newDiv, currentDiv);
 }
 
-//Trikampio isvedimas
-triangle.addEventListener("click", function () {
-  function generateTriangle() {
+submit.addEventListener("click", function () {
+  function submit() {
+    card.innerHTML = "";
+
+    const newDiv1 = document.createElement("div");
+    newDiv1.setAttribute("id", "newdiv1");
+    const newDiv2 = document.createElement("div");
+    newDiv2.setAttribute("id", "newdiv2");
+    const newDiv3 = document.createElement("div");
+    newDiv3.setAttribute("id", "newdiv3");
+    const inputs1 = document.createTextNode(input1.value);
+
+    const inputs2 = document.createTextNode(input2.value);
+
+    const inputs3 = document.createTextNode(input3.value);
+
+    newDiv1.appendChild(inputs1);
+
+    newDiv2.appendChild(inputs2);
+
+    newDiv3.appendChild(inputs3);
+
+    document.getElementById("card").append(newDiv1, newDiv2, newDiv3);
+
+    var input = document.getElementById("input1").value;
+    localStorage.setItem("server", input);
+  }
+
+  submit();
+});
+
+sssubmit.addEventListener("click", function () {
+  function submit() {
+    card.innerHTML = "";
+    // create a new div element
+    const newDiv = document.createElement("div");
+    x = input1.value + input2.value + input3.value;
+    // and give it some content
+    const inputs = document.createTextNode(x);
+
+    // add the text node to the newly created div
+    newDiv.appendChild(inputs);
+
+    // add the newly created element and its content into the DOM
+    //const currentDiv = document.getElementById("div");
+    //document.body.insertBefore(newDiv, currentDiv);
+    document.getElementById("card").appendChild(newDiv);
+  }
+
+  submit();
+});
+
+ssubmit.addEventListener("click", function () {
+  function submit() {
     result.innerHTML = "";
     var totalNumberofRows = 5;
     for (var i = 1; i <= totalNumberofRows; i++) {
-      var output = "";
+      var output = "&nbsp";
       for (var j = 1; j <= i; j++) {
         //output += j + " ";  dar galimas variantas norint isvesti skaicius
-        output += "*";
+        output += "*" + "&nbsp";
       }
       document.querySelector("#result").innerHTML += output + "<br />";
     }
   }
-  generateTriangle();
-});
-
-//Pyramides isvedimas
-pyramid.addEventListener("click", function () {
-  function generatePyramid() {
-    result.innerHTML = "";
-    let n = 5;
-    let output = "";
-    for (let i = 1; i <= n; i++) {
-      for (let j = 1; j <= n - i; j++) {
-        output += "&nbsp";
-      }
-      for (let k = 0; k < 2 * i - 1; k++) {
-        output += "*";
-      }
-
-      output += "<br />";
-    }
-    document.querySelector("#result").innerHTML += output;
-  }
-
-  generatePyramid();
-});
-
-//Atvirkstines pyramides isvedimas
-reversePyramid.addEventListener("click", function () {
-  function generateReversePyramid() {
-    result.innerHTML = "";
-    let n = 5;
-
-    let output = "";
-
-    for (let i = 0; i < n; i++) {
-      // isores ciklas
-
-      for (let j = 0; j < i; j++) {
-        output += "&nbsp"; // spausdina tarpus
-      }
-
-      for (let k = 0; k < 2 * (n - i) - 1; k++) {
-        output += "*"; // spausdina zvaigzdutes
-      }
-
-      output += "<br>";
-    }
-
-    document.querySelector("#result").innerHTML += output;
-
-    console.log(output);
-  }
-  generateReversePyramid();
-});
-
-//Trinimo mygtukas
-clear.addEventListener("click", function () {
-  function Clear() {
-    result.innerHTML = "";
-    //document.querySelector("#result").innerHTML += "";
-  }
-  Clear();
-});
-
-//Rombo isvedimas
-rhomb.addEventListener("click", function () {
-  function generateRhomb() {
-    result.innerHTML = "";
-    for (i = 1; i <= 5; i++) {
-      output = "&nbsp";
-      for (j = i; j < 5; j++) {
-        output += "&nbsp";
-      }
-      for (k = 0; k < i * 2 - 1; k++) {
-        output += "*";
-      }
-      document.querySelector("#result").innerHTML += output + "<br />";
-    }
-    var output = " ";
-    for (i = 5 - 1; i >= 1; i--) {
-      output = "&nbsp";
-      for (j = i; j < 5; j++) {
-        output += "&nbsp";
-      }
-      for (k = 0; k < i * 2 - 1; k++) {
-        output += "*";
-      }
-      document.querySelector("#result").innerHTML += output + "<br />";
-    }
-  }
-
-  generateRhomb();
+  submit();
 });

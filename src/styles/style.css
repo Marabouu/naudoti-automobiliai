@@ -2,28 +2,47 @@
   font-family: monospace;
 }
 
+.input {
+  padding: 3px;
+}
+#app {
+  border: 2px solid black;
+  margin-top: 100px;
+  display: flex;
+  padding: 50px;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+}
+
+#inputs {
+  border: 2px solid black;
+  padding: 10px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+}
+
 #result {
   font-family: monospace;
-
-  margin-top: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 10px;
-  border: 2px solid black;
-  width: 300px;
-  height: 150px;
 }
 
-#app {
+#card {
   padding: 30px;
   border: 1px solid #cccccc;
   box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.75);
   border-radius: 20px;
-  max-width: 300px;
+  width: 300px;
   margin: auto;
-  margin-top: 100px;
-  height: 300px;
+
+  height: 100px;
 }
 
 #header {
