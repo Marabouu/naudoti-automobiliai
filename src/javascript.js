@@ -1,87 +1,72 @@
-var input1 = document.getElementById("input1");
-var input2 = document.getElementById("input2");
-var input3 = document.getElementById("input3");
-var submit = document.getElementById("submit");
-document.getElementById("input1").value = localStorage.getItem("server");
-function addElement() {
-  // create a new div element
-  const newDiv = document.createElement("div");
-
-  // and give it some content
-  const newContent = document.createTextNode("Hi there and greetings!");
-
-  // add the text node to the newly created div
-  newDiv.appendChild(newContent);
-
-  // add the newly created element and its content into the DOM
-  const currentDiv = document.getElementById("div1");
-  document.body.insertBefore(newDiv, currentDiv);
+function createElement(tag, props) {
+  const newTag = document.createElement(tag);
+  if (props && props.length) {
+    props.forEach((singleProp) => {
+      newTag[singleProp.name] = singleProp.value;
+    });
+  }
+  return newTag;
 }
-
-submit.addEventListener("click", function () {
-  function submit() {
-    card.innerHTML = "";
-
-    const newDiv1 = document.createElement("div");
-    newDiv1.setAttribute("id", "newdiv1");
-    const newDiv2 = document.createElement("div");
-    newDiv2.setAttribute("id", "newdiv2");
-    const newDiv3 = document.createElement("div");
-    newDiv3.setAttribute("id", "newdiv3");
-    const inputs1 = document.createTextNode(input1.value);
-
-    const inputs2 = document.createTextNode(input2.value);
-
-    const inputs3 = document.createTextNode(input3.value);
-
-    newDiv1.appendChild(inputs1);
-
-    newDiv2.appendChild(inputs2);
-
-    newDiv3.appendChild(inputs3);
-
-    document.getElementById("card").append(newDiv1, newDiv2, newDiv3);
-
-    var input = document.getElementById("input1").value;
-    localStorage.setItem("server", input);
+function render(data) {
+  const cardContainerId = "business-card-output";
+  if (document.querySelector(`#${cardContainerId}`)) {
+    document.querySelector(`#${cardContainerId}`).remove();
   }
-
-  submit();
-});
-
-sssubmit.addEventListener("click", function () {
-  function submit() {
-    card.innerHTML = "";
-    // create a new div element
-    const newDiv = document.createElement("div");
-    x = input1.value + input2.value + input3.value;
-    // and give it some content
-    const inputs = document.createTextNode(x);
-
-    // add the text node to the newly created div
-    newDiv.appendChild(inputs);
-
-    // add the newly created element and its content into the DOM
-    //const currentDiv = document.getElementById("div");
-    //document.body.insertBefore(newDiv, currentDiv);
-    document.getElementById("card").appendChild(newDiv);
+  const cardContainer = createElement("div", [
+    { name: "id", value: cardContainerId },
+  ]);
+  const nameParagraph = createElement("p", [
+    { name: "textContent", value: data.name },
+  ]);
+  const emailParagraph = createElement("p", [
+    { name: "textContent", value: data.email },
+  ]);
+  const phoneParagraph = createElement("p", [
+    { name: "textContent", value: data.phone },
+  ]);
+  const addressParagraph = createElement("p", [
+    { name: "textContent", value: data.address },
+  ]);
+  const serviceParagraph = createElement("p", [
+    { name: "textContent", value: data.service },
+  ]);
+  cardContainer.append(
+    nameParagraph,
+    emailParagraph,
+    phoneParagraph,
+    addressParagraph,
+    serviceParagraph
+  );
+  document.querySelector("#app").append(cardContainer);
+}
+window.addEventListener("DOMContentLoaded", () => {
+  if (window.localStorage.getItem("cardInputs")) {
+    const persistedData = JSON.parse(window.localStorage.getItem("cardInputs"));
+    render(persistedData);
+    // more advanced solution
+    document.querySelectorAll("#card-inputs input").forEach((input) => {
+      input.value = persistedData[input.name];
+    });
+    // simple and valid solution
+    // document.querySelector("#card-inputs [name='name']").value = persistedData.name;
+    // document.querySelector("#card-inputs [name='email']").value = persistedData.email;
+    // document.querySelector("#card-inputs [name='address']").value = persistedData.address;
+    // document.querySelector("#card-inputs [name='phone']").value = persistedData.phone;
+    // document.querySelector("#card-inputs [name='service']").value = persistedData.service;
   }
-
-  submit();
-});
-
-ssubmit.addEventListener("click", function () {
-  function submit() {
-    result.innerHTML = "";
-    var totalNumberofRows = 5;
-    for (var i = 1; i <= totalNumberofRows; i++) {
-      var output = "&nbsp";
-      for (var j = 1; j <= i; j++) {
-        //output += j + " ";  dar galimas variantas norint isvesti skaicius
-        output += "*" + "&nbsp";
-      }
-      document.querySelector("#result").innerHTML += output + "<br />";
-    }
-  }
-  submit();
+  document.querySelector("#card-inputs").addEventListener("submit", (e) => {
+    e.preventDefault();
+    // more advanced solution
+    const cardInputs = Object.fromEntries(new FormData(e.target));
+    // simple and valid solution
+    // const cardInputs = {
+    //   name: e.target.querySelector("[name='name']").value,
+    //   email: e.target.querySelector("[name='email']").value,
+    //   address: e.target.querySelector("[name='address']").value,
+    //   phone: e.target.querySelector("[name='phone']").value,
+    //   service: e.target.querySelector("[name='service']").value,
+    // };
+    render(cardInputs);
+    window.localStorage.setItem("cardInputs", JSON.stringify(cardInputs));
+  });
 });
