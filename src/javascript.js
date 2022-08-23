@@ -4,29 +4,30 @@ const arrayUnshift = document.getElementById("btn2");
 const arrayFirstRemove = document.getElementById("btn3");
 const arrayLastRemove = document.getElementById("btn4");
 const arrayReverse = document.getElementById("btn5");
-const showArray = document.getElementById("btn6");
 const inputt = document.getElementById("name");
 
-function createElement(tag, props) {
-  const newTag = document.createElement(tag);
-  if (props && props.length) {
-    props.forEach((singleProp) => {
-      newTag[singleProp.name] = singleProp.value;
-    });
-  }
-  return newTag;
-}
-
 arrayPush.addEventListener("click", function () {
-  const newDiv1 = createElement("div", [{ value: namesList }]);
   namesList.push(inputt.value);
-  newDiv1.append(namesList);
+  namesList.forEach((name) => {
+    const nameParagraph = document.createElement("p", [
+      { name: "textContent", value: name },
+    ]);
 
-  document.querySelector("#result").append(newDiv1);
+    //newDiv1.append(nameParagraph);
+    document.querySelector("#result").append(nameParagraph);
+  });
 });
 
+//arrayPush.addEventListener("click", function () {
+//const newDiv1 = document.createElement("div");
+//namesList.push(inputt.value);
+//newDiv1.append(namesList);
+
+//document.querySelector("#result").append(newDiv1);
+//});
+
 arrayUnshift.addEventListener("click", function () {
-  const newDiv1 = createElement("div", [{ value: namesList }]);
+  const newDiv1 = document.createElement("div");
   namesList.unshift(inputt.value);
   newDiv1.append(namesList);
 
@@ -34,7 +35,7 @@ arrayUnshift.addEventListener("click", function () {
 });
 
 arrayFirstRemove.addEventListener("click", function () {
-  const newDiv1 = createElement("div", [{ value: namesList }]);
+  const newDiv1 = document.createElement("div");
   namesList.shift(inputt.value);
   newDiv1.append(namesList);
 
@@ -42,7 +43,7 @@ arrayFirstRemove.addEventListener("click", function () {
 });
 
 arrayLastRemove.addEventListener("click", function () {
-  const newDiv1 = createElement("div", [{ value: namesList }]);
+  const newDiv1 = document.createElement("div");
   namesList.pop(inputt.value);
   newDiv1.append(namesList);
 
@@ -50,13 +51,9 @@ arrayLastRemove.addEventListener("click", function () {
 });
 
 arrayReverse.addEventListener("click", function () {
-  const newDiv1 = createElement("div", [{ value: namesList }]);
+  const newDiv1 = document.createElement("div");
   namesList.reverse(inputt.value);
   newDiv1.append(namesList);
 
   document.querySelector("#result").append(newDiv1);
-});
-
-showArray.addEventListener("click", function () {
-  document.querySelector("#result").append(namesList);
 });
