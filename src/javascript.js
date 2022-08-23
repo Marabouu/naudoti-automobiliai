@@ -6,54 +6,66 @@ const arrayLastRemove = document.getElementById("btn4");
 const arrayReverse = document.getElementById("btn5");
 const inputt = document.getElementById("name");
 
+function stringToP() {
+  namesList.forEach((name) => {
+    const nameParagraph = document.createElement("p");
+    nameParagraph.textContent = name;
+    document.querySelector("#result").append(nameParagraph);
+    inputt.value = "";
+  });
+}
+
 arrayPush.addEventListener("click", function () {
+  result.innerHTML = "";
   namesList.push(inputt.value);
   namesList.forEach((name) => {
-    const nameParagraph = document.createElement("p", [
-      { name: "textContent", value: name },
-    ]);
-
-    //newDiv1.append(nameParagraph);
+    const nameParagraph = document.createElement("p");
+    nameParagraph.textContent = name;
     document.querySelector("#result").append(nameParagraph);
+    inputt.value = "";
   });
 });
 
-//arrayPush.addEventListener("click", function () {
-//const newDiv1 = document.createElement("div");
-//namesList.push(inputt.value);
-//newDiv1.append(namesList);
-
-//document.querySelector("#result").append(newDiv1);
-//});
-
 arrayUnshift.addEventListener("click", function () {
-  const newDiv1 = document.createElement("div");
+  result.innerHTML = "";
   namesList.unshift(inputt.value);
-  newDiv1.append(namesList);
-
-  document.querySelector("#result").append(newDiv1);
+  namesList.forEach((name) => {
+    const nameParagraph = document.createElement("p");
+    nameParagraph.textContent = name;
+    document.querySelector("#result").append(nameParagraph);
+    inputt.value = "";
+  });
 });
 
 arrayFirstRemove.addEventListener("click", function () {
-  const newDiv1 = document.createElement("div");
+  result.innerHTML = "";
   namesList.shift(inputt.value);
-  newDiv1.append(namesList);
-
-  document.querySelector("#result").append(newDiv1);
+  namesList.forEach((name) => {
+    const nameParagraph = document.createElement("p");
+    nameParagraph.textContent = name;
+    document.querySelector("#result").append(nameParagraph);
+    inputt.value = "";
+  });
 });
 
 arrayLastRemove.addEventListener("click", function () {
-  const newDiv1 = document.createElement("div");
+  result.innerHTML = "";
   namesList.pop(inputt.value);
-  newDiv1.append(namesList);
-
-  document.querySelector("#result").append(newDiv1);
+  namesList.forEach((name) => {
+    const nameParagraph = document.createElement("p");
+    nameParagraph.textContent = name;
+    document.querySelector("#result").append(nameParagraph);
+    inputt.value = "";
+  });
 });
 
 arrayReverse.addEventListener("click", function () {
-  const newDiv1 = document.createElement("div");
+  result.innerHTML = "";
   namesList.reverse(inputt.value);
-  newDiv1.append(namesList);
-
-  document.querySelector("#result").append(newDiv1);
+  namesList.forEach((name) => {
+    const nameParagraph = document.createElement("p");
+    nameParagraph.textContent = name;
+    document.querySelector("#result").append(nameParagraph);
+    inputt.value = "";
+  });
 });
