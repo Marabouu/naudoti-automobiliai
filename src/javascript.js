@@ -18,54 +18,29 @@ function stringToP() {
 arrayPush.addEventListener("click", function () {
   result.innerHTML = "";
   namesList.push(inputt.value);
-  namesList.forEach((name) => {
-    const nameParagraph = document.createElement("p");
-    nameParagraph.textContent = name;
-    document.querySelector("#result").append(nameParagraph);
-    inputt.value = "";
-  });
+  stringToP();
 });
 
 arrayUnshift.addEventListener("click", function () {
   result.innerHTML = "";
   namesList.unshift(inputt.value);
-  namesList.forEach((name) => {
-    const nameParagraph = document.createElement("p");
-    nameParagraph.textContent = name;
-    document.querySelector("#result").append(nameParagraph);
-    inputt.value = "";
-  });
+  stringToP();
 });
 
 arrayFirstRemove.addEventListener("click", function () {
   result.innerHTML = "";
   namesList.shift(inputt.value);
-  namesList.forEach((name) => {
-    const nameParagraph = document.createElement("p");
-    nameParagraph.textContent = name;
-    document.querySelector("#result").append(nameParagraph);
-    inputt.value = "";
-  });
+  stringToP();
 });
 
 arrayLastRemove.addEventListener("click", function () {
   result.innerHTML = "";
   namesList.pop(inputt.value);
-  namesList.forEach((name) => {
-    const nameParagraph = document.createElement("p");
-    nameParagraph.textContent = name;
-    document.querySelector("#result").append(nameParagraph);
-    inputt.value = "";
-  });
+  stringToP();
 });
 
 arrayReverse.addEventListener("click", function () {
   result.innerHTML = "";
   namesList.reverse(inputt.value);
-  namesList.forEach((name) => {
-    const nameParagraph = document.createElement("p");
-    nameParagraph.textContent = name;
-    document.querySelector("#result").append(nameParagraph);
-    inputt.value = "";
-  });
+  stringToP();
 });
