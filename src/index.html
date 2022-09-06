@@ -6,23 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="./javascript.js" defer></script>
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
-    <main id="app">
-      <form id="card-inputs">
-        <div>
-          <label for="name">Name</label>
-          <input name="name" type="text" id="name" />
-        </div>
-        <br />
-        <button type="button" id="btn1">Add Guest List End</button>
-        <button type="button" id="btn2">Add Guest List Start</button>
-        <button type="button" id="btn3">Remove First</button>
-        <button type="button" id="btn4">Remove Last</button>
-        <button type="button" id="btn5">Reverse List</button>
-      </form>
-      <br />
-      <div id="result"></div>
-    </main>
+    <div class="content">
+      <p>Prideti adresata</p>
+      <div class="input">
+        <label for="user">Vardas</label>
+        <input type="text" id="input1" name="user" />
+      </div>
+      <div class="input">
+        <label for="phone">Telefonas</label>
+        <input type="text" id="input2" name="phone" />
+      </div>
+      <button class="button" id="submit">Prideti adresata</button>
+    </div>
+    <div id="adress">
+      <li>Adresu knyga</li>
+      <div class="output" id="output"></div>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>

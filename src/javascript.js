@@ -1,36 +1,48 @@
-const namesList = ["Tomas", "Ponas", "Antanas", "Petras", "Jurgis"];
-const arrayPush = document.getElementById("btn1");
-const arrayUnshift = document.getElementById("btn2");
-const arrayFirstRemove = document.getElementById("btn3");
-const arrayLastRemove = document.getElementById("btn4");
-const arrayReverse = document.getElementById("btn5");
-const inputt = document.getElementById("name");
-function stringToP() {
-  result.innerHTML = "";
-  namesList.forEach((name) => {
-    const nameParagraph = document.createElement("p");
-    nameParagraph.textContent = name;
-    document.querySelector("#result").append(nameParagraph);
-    inputt.value = "";
-  });
+let input1 = document.getElementById("input1");
+let input2 = document.getElementById("input2");
+let submit = document.getElementById("submit");
+let output = document.getElementById("output");
+let users = [];
+
+submit.addEventListener("click", function () {
+  CreateObject();
+  CheckInput();
+});
+
+class adressBook {
+  constructor(object) {
+    this.name = object.name;
+    this.phone = object.phone;
+  }
+
+  getUserContainer() {
+    return `<div class="outputContent">
+            <div>
+            <p>${this.name} </p>
+            <p>${this.phone} </p>
+            </div>
+            <div class="delete">
+            <button id="btn1">Trinti</button>
+            </div>
+            <br>
+         </div>`;
+    `<br>`;
+  }
 }
-arrayPush.addEventListener("click", function () {
-  namesList.push(inputt.value);
-  stringToP();
-});
-arrayUnshift.addEventListener("click", function () {
-  namesList.unshift(inputt.value);
-  stringToP();
-});
-arrayFirstRemove.addEventListener("click", function () {
-  namesList.shift(inputt.value);
-  stringToP();
-});
-arrayLastRemove.addEventListener("click", function () {
-  namesList.pop(inputt.value);
-  stringToP();
-});
-arrayReverse.addEventListener("click", function () {
-  namesList.reverse(inputt.value);
-  stringToP();
-});
+
+function CreateObject() {
+  let user = new adressBook({
+    name: input1.value,
+    phone: input2.value,
+  });
+  output.insertAdjacentHTML("beforeend", user.getUserContainer());
+
+  users.push(user);
+  console.log(users);
+}
+
+function CheckInput() {
+  if (input1.value == "" || input2.value == "") {
+    alert("Prasom ivesti varda ir telefona");
+  }
+}
