@@ -5,44 +5,22 @@ let output = document.getElementById("output");
 let users = [];
 
 submit.addEventListener("click", function () {
-  CreateObject();
-  CheckInput();
+  function submit() {
+    const nameParagraph = document.createElement("p");
+    nameParagraph.setAttribute("id", "nameParagraph");
+    const phoneParagraph = document.createElement("p");
+    phoneParagraph.setAttribute("id", "phoneParagraph");
+
+    const inputs1 = document.createTextNode(input1.value);
+
+    const inputs2 = document.createTextNode(input2.value);
+
+    nameParagraph.appendChild(inputs1);
+
+    phoneParagraph.appendChild(inputs2);
+
+    document.getElementById("output").append(nameParagraph, phoneParagraph);
+  }
+
+  submit();
 });
-
-class adressBook {
-  constructor(object) {
-    this.name = object.name;
-    this.phone = object.phone;
-  }
-
-  getUserContainer() {
-    return `<div class="outputContent">
-            <div>
-            <p>${this.name} </p>
-            <p>${this.phone} </p>
-            </div>
-            <div class="delete">
-            <button id="btn1">Trinti</button>
-            </div>
-            <br>
-         </div>`;
-    `<br>`;
-  }
-}
-
-function CreateObject() {
-  let user = new adressBook({
-    name: input1.value,
-    phone: input2.value,
-  });
-  output.insertAdjacentHTML("beforeend", user.getUserContainer());
-
-  users.push(user);
-  console.log(users);
-}
-
-function CheckInput() {
-  if (input1.value == "" || input2.value == "") {
-    alert("Prasom ivesti varda ir telefona");
-  }
-}
