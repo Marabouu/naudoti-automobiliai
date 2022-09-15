@@ -1,35 +1,71 @@
-#adress {
-  border: 2px solid black;
-  padding: 10px;
-  width: 200px;
-  margin-top: 10px;
-  margin-left: 10px;
+#app {
+  height: 100vh;
 }
-* {
-  margin: 0;
-  padding: 0;
+body {
+  margin-left: auto;
+  margin-right: auto;
+  width: 55%;
+  background-color: #f8f8ff;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
 }
-#content {
-  width: 300px;
+#head {
+  display: flex;
+  padding: 20px;
+  background-color: #fff5ee;
+  margin-left: auto;
+  margin-right: auto;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
 }
-#content p {
-  color: black;
-  font-weight: bold;
-  margin-bottom: 10px;
-  font-size: 1.5em;
-  text-align: center;
-  margin-top: 10px;
-}
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 52.1%;
+  padding: 20px;
+  background-color: #fff5ee;
 
-#button {
-  margin: 8px auto;
-  margin-left: 30px;
-}
-
-#phoneParagraph {
+  border-top: 1px solid black;
   border-bottom: 1px solid black;
 }
 
-#nameParagraph {
-  margin-top: 5px;
+#logo {
+  height: 30px;
+  width: max-content;
+  background-color: #7fffd4;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 11px;
+  padding-right: 11px;
+  font-size: 30px;
+  color: grey;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+#nav {
+  margin-left: 10px;
+  padding-top: 2px;
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+#mainPageImage {
+  width: 100%;
+}
+#headCarImg {
+  margin-left: 200px;
+  height: 50px;
+  width: 200px;
+}
+
+#copyright {
+  text-align: center;
+  font-size: 20px;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
 }
