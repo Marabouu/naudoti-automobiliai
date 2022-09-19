@@ -56,7 +56,7 @@ submit.addEventListener("click", function () {
         carColorParagraph
       );
     console.log(cars);
-    localStorage.setItem("addedCars", JSON.stringify(cars));
+    localStorage.setItem("addedCarsList", JSON.stringify(cars));
   }
 
   submit();
