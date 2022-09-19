@@ -1,42 +1,45 @@
 window.addEventListener("DOMContentLoaded", () => {
   if (window.localStorage.getItem("addedCarsList")) {
     const newCars = JSON.parse(window.localStorage.getItem("addedCarsList"));
-    const carContainer = document.createElement("div");
-    carContainer.setAttribute("id", "carContainer");
 
-    const brandParagraph = document.createElement("p");
-    brandParagraph.setAttribute("id", "brandParagraph");
+    newCars.forEcah((name) => {
+      const carContainer = document.createElement("div");
+      carContainer.setAttribute("id", "carContainer");
 
-    const modelParagraph = document.createElement("p");
-    modelParagraph.setAttribute("id", "modelParagraph");
+      const brandParagraph = document.createElement("p");
+      brandParagraph.setAttribute("id", "brandParagraph");
 
-    const yearParagraph = document.createElement("p");
-    yearParagraph.setAttribute("id", "yearParagraph");
+      const modelParagraph = document.createElement("p");
+      modelParagraph.setAttribute("id", "modelParagraph");
 
-    const engineParagraph = document.createElement("p");
-    engineParagraph.setAttribute("id", "engineParagraph");
+      const yearParagraph = document.createElement("p");
+      yearParagraph.setAttribute("id", "yearParagraph");
 
-    const classParagraph = document.createElement("p");
-    classParagraph.setAttribute("id", "classParagraph");
+      const engineParagraph = document.createElement("p");
+      engineParagraph.setAttribute("id", "engineParagraph");
 
-    const carColorParagraph = document.createElement("p");
-    carColorParagraph.setAttribute("id", "carColorParagraph");
+      const classParagraph = document.createElement("p");
+      classParagraph.setAttribute("id", "classParagraph");
 
-    brandParagraph.textContent = newCars.brand;
-    modelParagraph.textContent = newCars.model;
-    yearParagraph.textContent = newCars.year;
-    engineParagraph.textContent = newCars.engine;
-    classParagraph.textContent = newCars.class;
-    carColorParagraph.textContent = newCars.carColor;
+      const carColorParagraph = document.createElement("p");
+      carColorParagraph.setAttribute("id", "carColorParagraph");
 
-    carContainer.append(
-      brandParagraph,
-      modelParagraph,
-      yearParagraph,
-      engineParagraph,
-      classParagraph,
-      carColorParagraph
-    );
-    document.querySelector("#app").append(carContainer);
+      brandParagraph.textContent = newCars.brand;
+      modelParagraph.textContent = newCars.model;
+      yearParagraph.textContent = newCars.year;
+      engineParagraph.textContent = newCars.engine;
+      classParagraph.textContent = newCars.class;
+      carColorParagraph.textContent = newCars.carColor;
+
+      carContainer.append(
+        brandParagraph,
+        modelParagraph,
+        yearParagraph,
+        engineParagraph,
+        classParagraph,
+        carColorParagraph
+      );
+      document.querySelector("#app").append(carContainer);
+    });
   }
 });
