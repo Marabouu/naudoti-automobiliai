@@ -1,8 +1,8 @@
 window.addEventListener("DOMContentLoaded", () => {
   if (window.localStorage.getItem("addedCarsList")) {
-    const newCars = JSON.parse(window.localStorage.getItem("addedCarsList"));
+    const car = JSON.parse(window.localStorage.getItem("addedCarsList"));
 
-    newCars.forEcah((name) => {
+    car.forEcah((name) => {
       const carContainer = document.createElement("div");
       carContainer.setAttribute("id", "carContainer");
 
@@ -24,12 +24,12 @@ window.addEventListener("DOMContentLoaded", () => {
       const carColorParagraph = document.createElement("p");
       carColorParagraph.setAttribute("id", "carColorParagraph");
 
-      brandParagraph.textContent = newCars.brand;
-      modelParagraph.textContent = newCars.model;
-      yearParagraph.textContent = newCars.year;
-      engineParagraph.textContent = newCars.engine;
-      classParagraph.textContent = newCars.class;
-      carColorParagraph.textContent = newCars.carColor;
+      brandParagraph.textContent = car.brand;
+      modelParagraph.textContent = car.model;
+      yearParagraph.textContent = car.year;
+      engineParagraph.textContent = car.engine;
+      classParagraph.textContent = car.class;
+      carColorParagraph.textContent = car.carColor;
 
       carContainer.append(
         brandParagraph,
