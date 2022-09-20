@@ -8,8 +8,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
       const carContainer2 = document.createElement("div");
       carContainer2.setAttribute("id", "carContainer2");
+
       const carContainer3 = document.createElement("div");
       carContainer3.setAttribute("id", "carContainer3");
+
+      const carContainer4 = document.createElement("div");
+      carContainer4.setAttribute("id", "carContainer4");
 
       const brandParagraph = document.createElement("p");
       brandParagraph.setAttribute("id", "brandParagraph");
@@ -31,13 +35,18 @@ window.addEventListener("DOMContentLoaded", () => {
 
       const carPhotoImage = document.createElement("img");
       carPhotoImage.setAttribute("height", 200);
+      carPhotoImage.setAttribute("width", 280);
+
+      const gearboxParagraph = document.createElement("p");
+      gearboxParagraph.setAttribute("id", "gearboxParagraph");
+
+      const fuelParagraph = document.createElement("p");
+      fuelParagraph.setAttribute("id", "fuelParagraph");
+
+      const mileageParagraph = document.createElement("p");
+      mileageParagraph.setAttribute("id", "mileageParagraph");
 
       const space = document.createElement("br");
-      const space2 = document.createElement("br");
-      const space3 = document.createElement("br");
-      const space4 = document.createElement("br");
-      const space5 = document.createElement("br");
-      const space6 = document.createElement("br");
 
       brandParagraph.textContent = "Marke :  " + car.brand;
       modelParagraph.textContent = "Modelis :  " + car.model;
@@ -45,24 +54,29 @@ window.addEventListener("DOMContentLoaded", () => {
       engineParagraph.textContent = "Varyklio turis :  " + car.engine;
       classParagraph.textContent = "Kebulo Tipas :  " + car.class;
       carColorParagraph.textContent = "Spalva :  " + car.carColor;
+      gearboxParagraph.textContent = "Pavaru Deze :  " + car.gearbox;
+      fuelParagraph.textContent = "Kuro Tipas :  " + car.fuel;
+      mileageParagraph.textContent = "Rida :  " + car.mileage;
       carPhotoImage.src = car.carImage;
 
       carContainer.append(
         brandParagraph,
-        space2,
         modelParagraph,
-        space3,
         yearParagraph,
-        space4,
         engineParagraph,
-        space5,
-        classParagraph,
-        space6,
-        carColorParagraph
+        classParagraph
       );
+
+      carContainer4.append(
+        carColorParagraph,
+        gearboxParagraph,
+        fuelParagraph,
+        mileageParagraph
+      );
+
       carContainer2.append(carPhotoImage);
 
-      carContainer3.append(carContainer, carContainer2);
+      carContainer3.append(carContainer, carContainer4, carContainer2);
 
       document.querySelector("#app").append(carContainer3, space);
       console.log(car);

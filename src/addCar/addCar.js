@@ -5,6 +5,9 @@ let input4 = document.getElementById("engine");
 let input5 = document.getElementById("class");
 let input6 = document.getElementById("carColor");
 let input7 = document.getElementById("carImage");
+let input8 = document.getElementById("gearbox");
+let input9 = document.getElementById("fuel");
+let input10 = document.getElementById("mileage");
 let submit = document.getElementById("submit");
 let output = document.getElementById("output");
 let cars = [];
@@ -25,24 +28,20 @@ submit.addEventListener("click", function () {
       class: input5.value,
       carColor: input6.value,
       carImage: input7.value,
+      gearbox: input8.value,
+      fuel: input9.value,
+      mileage: input10.value,
     };
     cars.push(newCar);
 
     localStorage.setItem("addedCarsList", JSON.stringify(cars));
 
     const inputs = document.querySelectorAll(
-      "#brand, #model, #year, #engine, #class, #carColor, #carImage"
+      "#brand, #model, #year, #engine, #class, #carColor, #carImage, #gearbox, #fuel, #mileage"
     );
     inputs.forEach((input) => {
       input.value = "";
     });
-
-    //document.getElementById("brand").value = "";
-    //document.getElementById("model").value = "";
-    //document.getElementById("year").value = "";
-    //document.getElementById("engine").value = "";
-    //document.getElementById("class").value = "";
-    //document.getElementById("CarColor").value = "";
   }
 
   submit();
