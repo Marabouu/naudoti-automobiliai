@@ -29,6 +29,20 @@ submit.addEventListener("click", function () {
     cars.push(newCar);
 
     localStorage.setItem("addedCarsList", JSON.stringify(cars));
+
+    const inputs = document.querySelectorAll(
+      "#brand, #model, #year, #engine, #class, #carColor, #carImage"
+    );
+    inputs.forEach((input) => {
+      input.value = "";
+    });
+
+    //document.getElementById("brand").value = "";
+    //document.getElementById("model").value = "";
+    //document.getElementById("year").value = "";
+    //document.getElementById("engine").value = "";
+    //document.getElementById("class").value = "";
+    //document.getElementById("CarColor").value = "";
   }
 
   submit();
