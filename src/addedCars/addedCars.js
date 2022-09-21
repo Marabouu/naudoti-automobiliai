@@ -80,6 +80,24 @@ window.addEventListener("DOMContentLoaded", () => {
 
       document.querySelector("#app").append(carContainer3, space);
       console.log(car);
+
+      //var dropdown = document.getElementById("select");
+
+      //for (var i = 0; i < newCars.length; ++i) {
+
+      //  dropdown[dropdown.length] = new Option(newCars[i], newCars[i]);
+      // }
+
+      var select = document.getElementById("select");
+
+      newCars.forEach((car) => {
+        let o = document.createElement("option");
+        o.text = car.brand;
+        select.appendChild(o);
+      });
+      select.onchange = function () {
+        document.querySelector("#result").append(carContainer3, space);
+      };
     });
   }
 });
