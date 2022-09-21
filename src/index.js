@@ -79,10 +79,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
         carContainer3.append(carContainer, carContainer4, carContainer2);
 
-        //document.querySelector("#app").append(carContainer3, space);
+        document.querySelector("#app").append(carContainer3, space);
         console.log(car);
-
-        // }
       });
     }
     //*******************************************************************IKI CIA VISKAS VEIKIA************************************************** */
