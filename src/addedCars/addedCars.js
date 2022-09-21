@@ -78,26 +78,24 @@ window.addEventListener("DOMContentLoaded", () => {
 
       carContainer3.append(carContainer, carContainer4, carContainer2);
 
-      document.querySelector("#app").append(carContainer3, space);
+      //document.querySelector("#app").append(carContainer3, space);
       console.log(car);
 
-      //var dropdown = document.getElementById("select");
-
-      //for (var i = 0; i < newCars.length; ++i) {
-
-      //  dropdown[dropdown.length] = new Option(newCars[i], newCars[i]);
       // }
-
-      var select = document.getElementById("select");
-
-      newCars.forEach((car) => {
-        let o = document.createElement("option");
-        o.text = car.brand;
-        select.appendChild(o);
-      });
-      select.onchange = function () {
-        document.querySelector("#result").append(carContainer3, space);
-      };
     });
+    //*******************************************************************IKI CIA VISKAS VEIKIA************************************************** */
+    var select = document.getElementById("select");
+    select.addEventListener("change", (e) => {
+      selectedBrand = e.target.value; //globalus kintamasis sitas
+
+      // piesimo funkcija | issikelkit piesima is onload i atskira funkcija
+    });
+    newCars.forEach((car) => {
+      let o = document.createElement("option");
+      o.textContent = car.brand;
+      select.appendChild(o);
+    });
+
+    ////**************************************************************************************************************************************** */
   }
 });
