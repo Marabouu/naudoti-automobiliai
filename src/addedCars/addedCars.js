@@ -113,6 +113,6 @@ window.addEventListener("DOMContentLoaded", () => {
 submit.addEventListener("click", function () {
   document.getElementById("select").selectedIndex = 0;
   document.querySelector("#app").textContent = "";
-  newCars = JSON.parse(window.localStorage.getItem("addedCarsList"));
+  selectedBrand = null;
   appendResult();
 });

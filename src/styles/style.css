@@ -53,7 +53,27 @@ body {
   color: grey;
   border: 1px solid black;
   border-radius: 15px;
+
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 100% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
 }
+
 #nav {
   margin-left: 10px;
   padding-top: 2px;
@@ -64,6 +84,18 @@ body {
 #mainPageImage {
   width: 100%;
 }
+#button:hover {
+  color: orange;
+}
+
+#showCars:hover {
+  color: orange;
+}
+
+#submit:hover {
+  color: orange;
+}
+
 #headCarImg {
   margin-left: 0px;
   height: 50px;
