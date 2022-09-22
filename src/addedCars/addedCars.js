@@ -91,24 +91,27 @@ window.addEventListener("DOMContentLoaded", () => {
   if (window.localStorage.getItem("addedCarsList")) {
     newCars = JSON.parse(window.localStorage.getItem("addedCarsList"));
     appendResult();
-    //*******************************************************************IKI CIA VISKAS VEIKIA************************************************** */
+
     var select = document.getElementById("select");
     select.addEventListener("change", (e) => {
-      selectedBrand = e.target.value; //globalus kintamasis sitas
+      selectedBrand = e.target.value;
       document.querySelector("#app").textContent = "";
       appendResult();
     });
-    newCars.forEach((car) => {
-      let o = document.createElement("option");
-      o.textContent = car.brand;
-      select.appendChild(o);
-    });
 
-    ////**************************************************************************************************************************************** */
+    newCars
+      .filter((v, i) => newCars.findIndex((car) => car.brand === v.brand) === i)
+      .forEach((car) => {
+        let o = document.createElement("option");
+
+        o.textContent = car.brand;
+        select.appendChild(o);
+      });
   }
 });
 
 submit.addEventListener("click", function () {
+  document.getElementById("select").selectedIndex = 0;
   document.querySelector("#app").textContent = "";
   newCars = JSON.parse(window.localStorage.getItem("addedCarsList"));
   appendResult();

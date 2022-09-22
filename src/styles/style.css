@@ -22,6 +22,7 @@ body {
 }
 #head {
   display: flex;
+  justify-content: space-between;
   padding: 20px;
   background-color: #fff5ee;
   margin-left: auto;
@@ -64,7 +65,7 @@ body {
   width: 100%;
 }
 #headCarImg {
-  margin-left: 200px;
+  margin-left: 0px;
   height: 50px;
   width: 200px;
 }
@@ -122,4 +123,5 @@ div#carContainer4 p {
 }
 
 #showCars {
+  margin-right: 10px;
 }
