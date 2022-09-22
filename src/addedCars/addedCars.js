@@ -1,8 +1,13 @@
-window.addEventListener("DOMContentLoaded", () => {
-  if (window.localStorage.getItem("addedCarsList")) {
-    const newCars = JSON.parse(window.localStorage.getItem("addedCarsList"));
+let selectedBrand = "";
+let newCars = [];
 
-    newCars.forEach((car) => {
+let submit = document.getElementById("showCars");
+
+function appendResult() {
+  newCars
+
+    .filter((car) => car.brand === selectedBrand || !selectedBrand)
+    .forEach((car) => {
       const carContainer = document.createElement("div");
       carContainer.setAttribute("id", "carContainer");
 
@@ -78,17 +83,20 @@ window.addEventListener("DOMContentLoaded", () => {
 
       carContainer3.append(carContainer, carContainer4, carContainer2);
 
-      //document.querySelector("#app").append(carContainer3, space);
+      document.querySelector("#app").append(carContainer3, space);
       console.log(car);
-
-      // }
     });
+}
+window.addEventListener("DOMContentLoaded", () => {
+  if (window.localStorage.getItem("addedCarsList")) {
+    newCars = JSON.parse(window.localStorage.getItem("addedCarsList"));
+    appendResult();
     //*******************************************************************IKI CIA VISKAS VEIKIA************************************************** */
     var select = document.getElementById("select");
     select.addEventListener("change", (e) => {
       selectedBrand = e.target.value; //globalus kintamasis sitas
-
-      // piesimo funkcija | issikelkit piesima is onload i atskira funkcija
+      document.querySelector("#app").textContent = "";
+      appendResult();
     });
     newCars.forEach((car) => {
       let o = document.createElement("option");
@@ -98,4 +106,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
     ////**************************************************************************************************************************************** */
   }
+});
+
+submit.addEventListener("click", function () {
+  document.querySelector("#app").textContent = "";
+  newCars = JSON.parse(window.localStorage.getItem("addedCarsList"));
+  appendResult();
 });
