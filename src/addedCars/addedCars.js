@@ -103,7 +103,6 @@ window.addEventListener("DOMContentLoaded", () => {
       .filter((v, i) => newCars.findIndex((car) => car.brand === v.brand) === i)
       .forEach((car) => {
         let o = document.createElement("option");
-
         o.textContent = car.brand;
         select.appendChild(o);
       });
