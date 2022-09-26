@@ -27,83 +27,88 @@
     <div id="app">
       <p>Suveskite automobilio duomenys</p>
       <div id="app2">
-        <form id="form">
-          <br />
-          <label for="brand">Automobilio marke</label><br />
-          <input
-            type="text"
-            id="brand"
-            name="brand"
-            oninput="this.value = this.value.toUpperCase()"
-          /><br />
+        <form id="form3">
+          <div id="forms">
+            <div id="form">
+              <br />
+              <label for="brand">Automobilio marke</label><br />
+              <input
+                type="text"
+                id="brand"
+                name="brand"
+                oninput="this.value = this.value.toUpperCase()"
+              /><br />
 
-          <label for="model">Modelis</label><br />
-          <input
-            type="text"
-            id="model"
-            name="model"
-            oninput="this.value = this.value.toUpperCase()"
-          /><br />
+              <label for="model">Modelis</label><br />
+              <input
+                type="text"
+                id="model"
+                name="model"
+                oninput="this.value = this.value.toUpperCase()"
+              /><br />
 
-          <label for="year">Metai</label><br />
-          <input type="text" id="year" name="year" /><br />
+              <label for="year">Metai</label><br />
+              <input type="text" id="year" name="year" /><br />
 
-          <label for="engine">Varyklio turis</label><br />
-          <input
-            type="text"
-            id="engine"
-            name="engine"
-            oninput="this.value = this.value.toUpperCase()"
-          /><br />
+              <label for="engine">Varyklio turis</label><br />
+              <input
+                type="text"
+                id="engine"
+                name="engine"
+                oninput="this.value = this.value.toUpperCase()"
+              /><br />
 
-          <label for="engine">Pavaru Deze</label><br />
-          <input
-            type="text"
-            id="gearbox"
-            name="gearbox"
-            oninput="this.value = this.value.toUpperCase()"
-          /><br />
-        </form>
-        <form id="form2">
-          <label for="class">Tipas</label><br />
-          <input
-            type="text"
-            id="class"
-            name="class"
-            oninput="this.value = this.value.toUpperCase()"
-          /><br />
+              <label for="engine">Pavaru Deze</label><br />
+              <input
+                type="text"
+                id="gearbox"
+                name="gearbox"
+                oninput="this.value = this.value.toUpperCase()"
+              /><br />
+            </div>
+            <div id="form2">
+              <label for="class">Tipas</label><br />
+              <input
+                type="text"
+                id="class"
+                name="class"
+                oninput="this.value = this.value.toUpperCase()"
+              /><br />
 
-          <label for="carColor">Spalva</label><br />
-          <input
-            type="text"
-            id="carColor"
-            name="carColor"
-            oninput="this.value = this.value.toUpperCase()"
-          /><br />
+              <label for="carColor">Spalva</label><br />
+              <input
+                type="text"
+                id="carColor"
+                name="carColor"
+                oninput="this.value = this.value.toUpperCase()"
+              /><br />
 
-          <label for="carColor">Kuro Tipas</label><br />
-          <input
-            type="text"
-            id="fuel"
-            name="fuel"
-            oninput="this.value = this.value.toUpperCase()"
-          /><br />
+              <label for="fuel">Kuro Tipas</label><br />
+              <input
+                type="text"
+                id="fuel"
+                name="fuel"
+                oninput="this.value = this.value.toUpperCase()"
+              /><br />
 
-          <label for="carColor">Rida</label><br />
-          <input
-            type="text"
-            id="mileage"
-            name="mileage"
-            oninput="this.value = this.value.toUpperCase()"
-          /><br />
+              <label for="mileage">Rida</label><br />
+              <input
+                type="text"
+                id="mileage"
+                name="mileage"
+                oninput="this.value = this.value.toUpperCase()"
+              /><br />
 
-          <label for="carColor">Nuotrauka (irasykit URL)</label><br />
-          <input type="text" id="carImage" name="carImage" /><br />
-          <br />
-          <br />
+              <label for="carImage">Nuotrauka (irasykit URL)</label><br />
+              <input type="text" id="carImage" name="carImage" /><br />
+              <br />
+              <br />
+            </div>
+          </div>
+          <button type="submit" id="submit">Ikelti</button>
         </form>
       </div>
-      <button type="button" id="submit">Ikelti</button>
+
       <div id="output"></div>
     </div>
     <footer id="footer">

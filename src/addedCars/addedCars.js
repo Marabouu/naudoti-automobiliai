@@ -3,55 +3,60 @@ let newCars = [];
 
 let submit = document.getElementById("showCars");
 
+function createElement(tag) {
+  const newTag = document.createElement(tag);
+  return newTag;
+}
+
 function appendResult() {
   newCars
 
     .filter((car) => car.brand === selectedBrand || !selectedBrand)
     .forEach((car) => {
-      const carContainer = document.createElement("div");
+      const carContainer = createElement("div");
       carContainer.setAttribute("id", "carContainer");
 
-      const carContainer2 = document.createElement("div");
+      const carContainer2 = createElement("div");
       carContainer2.setAttribute("id", "carContainer2");
 
-      const carContainer3 = document.createElement("div");
+      const carContainer3 = createElement("div");
       carContainer3.setAttribute("id", "carContainer3");
 
-      const carContainer4 = document.createElement("div");
+      const carContainer4 = createElement("div");
       carContainer4.setAttribute("id", "carContainer4");
 
-      const brandParagraph = document.createElement("p");
+      const brandParagraph = createElement("p");
       brandParagraph.setAttribute("id", "brandParagraph");
 
-      const modelParagraph = document.createElement("p");
+      const modelParagraph = createElement("p");
       modelParagraph.setAttribute("id", "modelParagraph");
 
-      const yearParagraph = document.createElement("p");
+      const yearParagraph = createElement("p");
       yearParagraph.setAttribute("id", "yearParagraph");
 
-      const engineParagraph = document.createElement("p");
+      const engineParagraph = createElement("p");
       engineParagraph.setAttribute("id", "engineParagraph");
 
-      const classParagraph = document.createElement("p");
+      const classParagraph = createElement("p");
       classParagraph.setAttribute("id", "classParagraph");
 
-      const carColorParagraph = document.createElement("p");
+      const carColorParagraph = createElement("p");
       carColorParagraph.setAttribute("id", "carColorParagraph");
 
-      const carPhotoImage = document.createElement("img");
+      const carPhotoImage = createElement("img");
       carPhotoImage.setAttribute("height", 200);
       carPhotoImage.setAttribute("width", 280);
 
-      const gearboxParagraph = document.createElement("p");
+      const gearboxParagraph = createElement("p");
       gearboxParagraph.setAttribute("id", "gearboxParagraph");
 
-      const fuelParagraph = document.createElement("p");
+      const fuelParagraph = createElement("p");
       fuelParagraph.setAttribute("id", "fuelParagraph");
 
-      const mileageParagraph = document.createElement("p");
+      const mileageParagraph = createElement("p");
       mileageParagraph.setAttribute("id", "mileageParagraph");
 
-      const space = document.createElement("br");
+      const space = createElement("br");
 
       brandParagraph.textContent = "Marke :  " + car.brand;
       modelParagraph.textContent = "Modelis :  " + car.model;
